@@ -51,6 +51,19 @@ namespace OneButtonGame
             }
         }
         //player class buttons START
+        private void setEnemyImage()
+        {
+            switch (this.enemy.playerClass)
+            {
+                case "water":
+                    EnemyImage.Image = Properties.Resources.WaterMonster1;
+                    break;
+                case "fire":
+                    EnemyImage.Image = Properties.Resources.FireMonster1;
+                    break;
+
+            }
+        }
         private void FireClass_Click(object sender, EventArgs e)
         {
             Attack fireBall = new Attack(1, "Fire Ball", "fire", 0);
@@ -60,7 +73,7 @@ namespace OneButtonGame
             this.currentPlayer.addAttack(fireFall);
             this.currentPlayer.initPlayerClass("fire");
             PlayerImage.Image = Properties.Resources.FireMonster1;
-            EnemyImage.Image = Properties.Resources.FireMonster1;
+            setEnemyImage();
             chooseAttacksOff();
             fightViewOn();
         }
@@ -74,8 +87,7 @@ namespace OneButtonGame
             this.currentPlayer.addAttack(shark);
             this.currentPlayer.initPlayerClass("water");
             PlayerImage.Image = Properties.Resources.WaterMonster1;
-            EnemyImage.Image = Properties.Resources.WaterMonster1;
-
+            setEnemyImage();
             chooseAttacksOff();
             fightViewOn();
         }

@@ -19,6 +19,10 @@ namespace OneButtonGame
         {
             this.playerName = newPlayerName;
         }
+        public string getPlayerClass()
+        {
+            return this.playerClass;
+        }
 
         public void addAttack(Attack newAttack)
         {
